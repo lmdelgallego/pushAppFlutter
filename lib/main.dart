@@ -16,6 +16,10 @@ class _MyAppState extends State<MyApp> {
     super.initState();
     final pushProvider = new PushNotificationsProvider();
     pushProvider.initNotifications();
+    pushProvider.mensajeStream.listen((argumento) {
+      // print('argumento desde main: $argumento');
+      Navigator.pushNamed(context, 'mensaje');
+    });
   }
 
   @override
