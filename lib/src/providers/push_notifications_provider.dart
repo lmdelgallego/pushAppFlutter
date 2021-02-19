@@ -26,7 +26,7 @@ class PushNotificationsProvider {
   Future<dynamic> onMessage(Map<String, dynamic> message) async {
     print("==== onMessage ====");
     // print("message: $message");
-    final argumento = message['data']['hobby'];
+    final argumento = message['data']['hobby'] ?? 'no-data';
     // print(argumento);
     _mensajesStreamController.sink.add(argumento);
   }
@@ -34,7 +34,7 @@ class PushNotificationsProvider {
   Future<dynamic> onLaunch(Map<String, dynamic> message) async {
     print("==== onLaunch ====");
     // print("message: $message");
-    final argumento = message['data']['hobby'];
+    final argumento = message['data']['hobby'] ?? 'no-data';
     // print(argumento);
     _mensajesStreamController.sink.add(argumento);
   }
@@ -42,7 +42,7 @@ class PushNotificationsProvider {
   Future<dynamic> onResume(Map<String, dynamic> message) async {
     print("==== onResume ====");
     // print("message: $message");
-    final argumento = message['data']['hobby'];
+    final argumento = message['data']['hobby'] ?? 'no-data';
     // print(argumento);
     _mensajesStreamController.sink.add(argumento);
   }
